@@ -1,4 +1,4 @@
-from Source.csvScanner import csvScanner
+from csvScanner import csvScanner
 
 
 def main():
