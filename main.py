@@ -1,5 +1,5 @@
 from TreeBuilder.treeBuilder import treeBuilder
-from treeAnalyzer import treeAnalyzer
+from Analyzer.treeAnalyzer import treeAnalyzer
 
 
 #   So far, this program can read in a CSV file and sort it into a customizable tree structure.
@@ -18,12 +18,13 @@ def main():
         "FIRE": 0,
         "ROBBERY": 0,
     }
-    fileLocation = '/Users/cameron/Downloads/Call_Data_2019 (1).csv'
-    dataSetSize = 100000
+    fileLocation = 'C:\\Users\\Cameron\\Downloads\\Call_Data_2019.csv'
+    dataSetSize = 10000
     builder = treeBuilder(hierarchy, fileLocation, dataSetSize)
     builder.build()
     analyzer = treeAnalyzer(hierarchy, builder.tree, keywords)
-    analyzer.traverse(builder.tree.rootNode, 9, hierarchy[len(hierarchy) - 1])
+    analyzer.start(builder.tree.rootNode, 9, hierarchy[len(hierarchy) - 1])
+    analyzer.printData()
     print("exit")
 
 
