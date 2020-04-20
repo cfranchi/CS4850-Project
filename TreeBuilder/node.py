@@ -8,9 +8,10 @@ class node:
         self.number = number
         self.parent = None
 
-    def addChildNode(self, node):
-        self.children.append(node)
-        self.childNames.append(node.name)
+    def addChildNode(self, childNode):
+        self.children.append(childNode)
+        self.childNames.append(childNode.name)
 
-    def setParentNode(self, node):
-        self.parent = node
+    def setParentNode(self, parentNode):
+        self.parent = parentNode
+
